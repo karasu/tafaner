@@ -102,4 +102,68 @@ class AfiliatsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+ /**
+     * Import method
+     *
+     * @param string|null $id Afiliat id.
+     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function import()
+    {
+        if ($this->request->is('post')) {
+            $data = $this->request->getData();
+            if ($this->Centres->import($data['csv']))
+            {
+                $this->Flash->success(__('All afiliats have been imported.'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Afiliats data could not be imported. Please, try again'));
+        }
+    }
+
+    /**
+     * Search method
+     *
+     * @param string|null $id afiliat id
+     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function search() {
+        if ($this->request->is('post')) {
+            $data = $this->request->getData();
+
+            // Remove empty array elements
+            $data = array_filter($data, fn($value) => !is_null($value) && $value !== '');
+            
+            foreach ($data as $k=>$v) {
+                $searchFilter['Afiliats.'.$k] = $v;
+            }
+            
+            if ($searchFilter == null || empty($searchFilter)) {
+                return $this->redirect(['action' => 'index']);
+            }
+
+            $query = $this->Centres->find('all')
+                ->where($searchFilter)
+                ->limit(100);
+
+            $number = $query->count();
+
+            if ($number <= 0) {
+                $this->Flash->error(__('Cannot find any afiliat! Please, try again.'));
+            }
+            else if ($number == 1) {
+                $row = $query->first();
+                return $this->redirect(['action' => 'view', $row['id']]);
+            }
+            else {
+                // Show search results
+                $session = $this->getRequest()->getSession()->write('SearchFilter', $searchFilter);
+                return $this->redirect(['action' => 'index']);
+            }
+        }
+        //$this->set(compact('naturaleses', 'titularitats', 'municipis', 'districtes', 'localitats', 'estudis'));
+        $this->set(compact('afiliats'));
+    }
 }

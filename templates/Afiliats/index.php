@@ -5,7 +5,12 @@
  */
 ?>
 <div class="afiliats index content">
-    <?= $this->Html->link(__('New Afiliat'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+<div class="float-right">
+    <!--<?= $this->Html->link(__('New Afiliat'), ['action' => 'add'], ['class' => 'button']) ?>-->
+    <?= $this->Html->link(__('Search'), ['action' => 'search'], ['class' => 'button']) ?>
+    <?= $this->Html->link(__('Import CSV'), ['action' => 'import'], ['class' => 'button']) ?>
+    <?= $this->Html->link(__('Export PDF'), ['action' => 'export'], ['class' => 'button']) ?>
+    </div>
     <h3><?= __('Afiliats') ?></h3>
     <div class="table-responsive">
         <table>
