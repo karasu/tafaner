@@ -22,6 +22,19 @@ use Cake\ORM\Entity;
  * @property string|null $federacio
  * @property string|null $sectorial
  * @property string|null $activitat
+ * @property string|null $email
+ * @property string|null $situacio_personal
+ * @property string|null $relacio
+ * @property string|null $grup
+ * @property string|null $situacio
+ * @property string|null $delegat
+ * @property string|null $empresa
+ * @property string|null $email_professional
+ * @property string|null $territorial
+ * @property string|null $ocupacio
+ * @property string|null $tipus_treballador
+ * @property string|null $cos_docent
+ * @property string|null $seccio_sindical
  */
 class Afiliat extends Entity
 {
@@ -48,5 +61,18 @@ class Afiliat extends Entity
         'federacio' => true,
         'sectorial' => true,
         'activitat' => true,
+        'email' => true,
+        'situacio_personal' => true,
+        'relacio' => true,
+        'grup' => true,
+        'situacio' => true,
+        'delegat' => true,
+        'empresa' => true,
+        'email_professional' => true,
+        'territorial' => true,
+        'ocupacio' => true,
+        'tipus_treballador' => true,
+        'cos_docent' => true,
+        'seccio_sindical' => true,
     ];
 }

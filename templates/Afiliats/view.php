@@ -59,6 +59,58 @@
                     <td><?= h($afiliat->activitat) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Email') ?></th>
+                    <td><?= h($afiliat->email) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Situacio Personal') ?></th>
+                    <td><?= h($afiliat->situacio_personal) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Relacio') ?></th>
+                    <td><?= h($afiliat->relacio) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Grup') ?></th>
+                    <td><?= h($afiliat->grup) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Situacio') ?></th>
+                    <td><?= h($afiliat->situacio) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Delegat') ?></th>
+                    <td><?= h($afiliat->delegat) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Empresa') ?></th>
+                    <td><?= h($afiliat->empresa) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Email Professional') ?></th>
+                    <td><?= h($afiliat->email_professional) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Territorial') ?></th>
+                    <td><?= h($afiliat->territorial) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Ocupacio') ?></th>
+                    <td><?= h($afiliat->ocupacio) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Tipus Treballador') ?></th>
+                    <td><?= h($afiliat->tipus_treballador) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Cos Docent') ?></th>
+                    <td><?= h($afiliat->cos_docent) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Seccio Sindical') ?></th>
+                    <td><?= h($afiliat->seccio_sindical) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($afiliat->id) ?></td>
                 </tr>

@@ -5,12 +5,7 @@
  */
 ?>
 <div class="afiliats index content">
-<div class="float-right">
-    <!--<?= $this->Html->link(__('New Afiliat'), ['action' => 'add'], ['class' => 'button']) ?>-->
-    <?= $this->Html->link(__('Search'), ['action' => 'search'], ['class' => 'button']) ?>
-    <?= $this->Html->link(__('Import CSV'), ['action' => 'import'], ['class' => 'button']) ?>
-    <?= $this->Html->link(__('Export PDF'), ['action' => 'export'], ['class' => 'button']) ?>
-    </div>
+    <?= $this->Html->link(__('New Afiliat'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Afiliats') ?></h3>
     <div class="table-responsive">
         <table>
@@ -30,6 +25,19 @@
                     <th><?= $this->Paginator->sort('federacio') ?></th>
                     <th><?= $this->Paginator->sort('sectorial') ?></th>
                     <th><?= $this->Paginator->sort('activitat') ?></th>
+                    <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('situacio_personal') ?></th>
+                    <th><?= $this->Paginator->sort('relacio') ?></th>
+                    <th><?= $this->Paginator->sort('grup') ?></th>
+                    <th><?= $this->Paginator->sort('situacio') ?></th>
+                    <th><?= $this->Paginator->sort('delegat') ?></th>
+                    <th><?= $this->Paginator->sort('empresa') ?></th>
+                    <th><?= $this->Paginator->sort('email_professional') ?></th>
+                    <th><?= $this->Paginator->sort('territorial') ?></th>
+                    <th><?= $this->Paginator->sort('ocupacio') ?></th>
+                    <th><?= $this->Paginator->sort('tipus_treballador') ?></th>
+                    <th><?= $this->Paginator->sort('cos_docent') ?></th>
+                    <th><?= $this->Paginator->sort('seccio_sindical') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -50,6 +58,19 @@
                     <td><?= h($afiliat->federacio) ?></td>
                     <td><?= h($afiliat->sectorial) ?></td>
                     <td><?= h($afiliat->activitat) ?></td>
+                    <td><?= h($afiliat->email) ?></td>
+                    <td><?= h($afiliat->situacio_personal) ?></td>
+                    <td><?= h($afiliat->relacio) ?></td>
+                    <td><?= h($afiliat->grup) ?></td>
+                    <td><?= h($afiliat->situacio) ?></td>
+                    <td><?= h($afiliat->delegat) ?></td>
+                    <td><?= h($afiliat->empresa) ?></td>
+                    <td><?= h($afiliat->email_professional) ?></td>
+                    <td><?= h($afiliat->territorial) ?></td>
+                    <td><?= h($afiliat->ocupacio) ?></td>
+                    <td><?= h($afiliat->tipus_treballador) ?></td>
+                    <td><?= h($afiliat->cos_docent) ?></td>
+                    <td><?= h($afiliat->seccio_sindical) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $afiliat->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $afiliat->id]) ?>

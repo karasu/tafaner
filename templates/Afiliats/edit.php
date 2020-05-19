@@ -35,6 +35,19 @@
                     echo $this->Form->control('federacio');
                     echo $this->Form->control('sectorial');
                     echo $this->Form->control('activitat');
+                    echo $this->Form->control('email');
+                    echo $this->Form->control('situacio_personal');
+                    echo $this->Form->control('relacio');
+                    echo $this->Form->control('grup');
+                    echo $this->Form->control('situacio');
+                    echo $this->Form->control('delegat');
+                    echo $this->Form->control('empresa');
+                    echo $this->Form->control('email_professional');
+                    echo $this->Form->control('territorial');
+                    echo $this->Form->control('ocupacio');
+                    echo $this->Form->control('tipus_treballador');
+                    echo $this->Form->control('cos_docent');
+                    echo $this->Form->control('seccio_sindical');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

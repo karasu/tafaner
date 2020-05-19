@@ -102,18 +102,11 @@ class AfiliatsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
- /**
-     * Import method
-     *
-     * @param string|null $id Afiliat id.
-     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function import()
     {
         if ($this->request->is('post')) {
             $data = $this->request->getData();
-            if ($this->Centres->import($data['csv']))
+            if ($this->Afiliats->import($data['csv']))
             {
                 $this->Flash->success(__('All afiliats have been imported.'));
                 return $this->redirect(['action' => 'index']);
@@ -130,6 +123,7 @@ class AfiliatsController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function search() {
+        $afiliats = $this->paginate($this->Afiliats);
         if ($this->request->is('post')) {
             $data = $this->request->getData();
 
